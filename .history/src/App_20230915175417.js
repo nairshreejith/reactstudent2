@@ -68,7 +68,7 @@ function App() {
       })
       .catch((error) => console.error(error));
   };
-
+  
   const handleDeleteUser = (id) => {
     api.delete(`/api/users/${id}`)
       .then(() => {
@@ -79,16 +79,16 @@ function App() {
 
   return (
     <div className="App container mt-5">
-      <h1 className="mb-4">User Management Portal</h1>
-      <div className="border bg-secondary text-white p-3 mb-4">
+      <h1 className="mb-4">User Management</h1>
+      <div className="border bg-dark text-white p-3 mb-4">
         <h2>User List</h2>
         <div className="mb-3">
           <div className="row">
             <div className="col-md-9">
-              <input type="text" className="form-control" placeholder="Search by Name or Email of User" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+              <input type="text" className="form-control" placeholder="Search by Name or Email" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
             <div className="col-md-3">
-              <button className="btn btn-info text-white" onClick={handleSearch}>Search User</button>
+              <button className="btn btn-info" onClick={handleSearch}>Search</button>
             </div>
           </div>
         </div>
@@ -136,11 +136,11 @@ function App() {
                 <td>{user.address}</td>
                 <td>
                   {editingUser === user.id ? (
-                    <button className="btn btn-success" onClick={() => handleModifyUser(user.id)}>Save User</button>
+                    <button className="btn btn-success" onClick={() => handleModifyUser(user.id)}>Save</button>
                   ) : (
                     <>
-                      <button className="btn btn-warning" onClick={() => setEditingUser(user.id)}>Edit User</button>
-                      <button className="btn btn-danger" onClick={() => handleDeleteUser(user.id)}>Delete User</button>
+                      <button className="btn btn-warning" onClick={() => setEditingUser(user.id)}>Edit</button>
+                      <button className="btn btn-danger" onClick={() => handleDeleteUser(user.id)}>Delete</button>
                     </>
                   )}
                 </td>
@@ -148,7 +148,7 @@ function App() {
             ))}
           </tbody>
         </table>
-        <button className="btn bg-danger text-white" onClick={() => setShowCreateForm(!showCreateForm)}>
+        <button className="btn btn-primary" onClick={() => setShowCreateForm(!showCreateForm)}>
           {showCreateForm ? "Cancel" : "Create User"}
         </button>
         {showCreateForm && (
@@ -179,7 +179,7 @@ function App() {
                 <input type="text" className="form-control" placeholder="Address" value={newUser.address} onChange={(e) => setNewUser({ ...newUser, address: e.target.value })} />
               </div>
               <div className="mb-4 p-3">
-                <button className="btn bg-success text-white" onClick={handleCreateUser}>Create User</button>
+                <button className="btn btn-primary" onClick={handleCreateUser}>Create User</button>
               </div>
             </div>
           </div>

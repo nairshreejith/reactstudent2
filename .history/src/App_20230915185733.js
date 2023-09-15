@@ -88,7 +88,7 @@ function App() {
               <input type="text" className="form-control" placeholder="Search by Name or Email of User" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
             <div className="col-md-3">
-              <button className="btn btn-info text-white" onClick={handleSearch}>Search User</button>
+              <button className="btn btn-info" onClick={handleSearch}>Search User</button>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ function App() {
             ))}
           </tbody>
         </table>
-        <button className="btn bg-danger text-white" onClick={() => setShowCreateForm(!showCreateForm)}>
+        <button className="btn bg-danger" onClick={() => setShowCreateForm(!showCreateForm)}>
           {showCreateForm ? "Cancel" : "Create User"}
         </button>
         {showCreateForm && (
@@ -179,7 +179,7 @@ function App() {
                 <input type="text" className="form-control" placeholder="Address" value={newUser.address} onChange={(e) => setNewUser({ ...newUser, address: e.target.value })} />
               </div>
               <div className="mb-4 p-3">
-                <button className="btn bg-success text-white" onClick={handleCreateUser}>Create User</button>
+                <button className="btn bg-success" onClick={handleCreateUser}>Create User</button>
               </div>
             </div>
           </div>

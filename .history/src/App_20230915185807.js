@@ -88,7 +88,7 @@ function App() {
               <input type="text" className="form-control" placeholder="Search by Name or Email of User" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
             <div className="col-md-3">
-              <button className="btn btn-info text-white" onClick={handleSearch}>Search User</button>
+              <button className="btn btn-info" onClick={handleSearch}>Search User</button>
             </div>
           </div>
         </div>

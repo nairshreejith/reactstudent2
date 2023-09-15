@@ -18,6 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,9 +40,8 @@
     ]
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.22.0",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.22.15",
     "node-sass": "^7.0.3"
   }
-
-  
 }
